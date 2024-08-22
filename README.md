@@ -14,3 +14,11 @@ Auto configuration(ErrorMvcAutoConfiguration)
 
 4.How are all jars available(Spring,Spring MVC, Jackson,Tomcat)?
 spring-starter-projects and Auto configurations
+
+Request Methods for REST Api
+
+1.GET - Retrieve details of a resource.
+2.POST - Create a new resource.
+3.PUT - Update an existing resource.
+4.PATCH - Update part of a resource.
+5.DELETE - Delete a resource.
