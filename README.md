@@ -40,4 +40,8 @@ Different types of versioning
 3.Custom header versioning
 4.Media type versioning - a.k.a -content negotiation or accept header
 
+HATEOAS - Hypermedia as the Engine of Application State
+EntityModel - It allows you to include both the entity data and additional hypermedia links for a api resource
+WebMvcLinkBuilder - Used to create a link in spring boot
+
 API client user - Talend api tester

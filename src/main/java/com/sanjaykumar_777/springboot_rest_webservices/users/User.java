@@ -1,5 +1,6 @@
 package com.sanjaykumar_777.springboot_rest_webservices.users;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Size;
@@ -8,8 +9,10 @@ import java.time.LocalDate;
 
 public class User {
     private int id;
+    @JsonProperty("user_name")
     @Size(min = 2,message = "Name should be atleast 2 characters length")
     private String name;
+    @JsonProperty("birth_date")
     @Past(message = "The birthdate should always be in past")
     private LocalDate birthDate;
 

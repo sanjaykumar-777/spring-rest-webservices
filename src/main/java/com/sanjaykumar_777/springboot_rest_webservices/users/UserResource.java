@@ -25,7 +25,7 @@ public class UserResource {
         return userDaoService.findAll();
     }
 
-    //EntityModel - HATEOAS
+    //EntityModel - HATEOAS - Hypermedia as the Engine of Application State
     //WebMvcLinkBuilder
     @GetMapping("/users/{id}")
     public EntityModel<User> retrieveUser(@PathVariable int id) {
