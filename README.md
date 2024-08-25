@@ -33,3 +33,11 @@ MessageSource
 Locale
 Accept-language
 message.properties
+
+Different types of versioning
+1.URI versioning
+2.Parameter versioning
+3.Custom header versioning
+4.Media type versioning - a.k.a -content negotiation or accept header
+
+API client user - Talend api tester
