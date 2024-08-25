@@ -1,18 +1,20 @@
 package com.sanjaykumar_777.springboot_rest_webservices.filtering;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /*
 JsonIgnoreProperties can be used at class level
  */
-@JsonIgnoreProperties("field3")
+//@JsonIgnoreProperties("field3")
+@JsonFilter("SomeBeanFilter")
 public class SomeBean {
     private String field1;
     /*
     JsonIgnore can be used at individual field level
      */
-    @JsonIgnore
+//    @JsonIgnore
     private String field2;
     private String field3;
 

@@ -44,4 +44,17 @@ HATEOAS - Hypermedia as the Engine of Application State
 EntityModel - It allows you to include both the entity data and additional hypermedia links for a api resource
 WebMvcLinkBuilder - Used to create a link in spring boot
 
+Types of filtering
+1. static filtering
+2. dynaminc filtering (at api level)
+
+Static filtering:
+@JsonIgnore (at field level)
+@JsonIgnoreProperties (at class level)
+
+Dynamic filtering:
+1.MappingJacksonValue
+2.SimpleBeanPropertyFilter
+3.FilterProvider
+
 API client user - Talend api tester
