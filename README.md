@@ -22,3 +22,8 @@ Request Methods for REST Api
 3.PUT - Update an existing resource.
 4.PATCH - Update part of a resource.
 5.DELETE - Delete a resource.
+
+OpenApi and Swagger specification for the rest api's
+
+OpenApi url - http://localhost:8080/v3/api-docs
+swaggerUi - http://localhost:8080/swagger-ui/index.html
