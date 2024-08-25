@@ -1,10 +1,16 @@
 package com.sanjaykumar_777.springboot_rest_webservices.users;
 
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.Past;
+import jakarta.validation.constraints.Size;
+
 import java.time.LocalDate;
 
 public class User {
     private int id;
+    @Size(min = 2,message = "Name should be atleast 2 characters length")
     private String name;
+    @Past(message = "The birthdate should always be in past")
     private LocalDate birthDate;
 
     public User(int id, String name, LocalDate birthDate) {

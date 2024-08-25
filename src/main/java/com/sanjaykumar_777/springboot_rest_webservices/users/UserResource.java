@@ -1,6 +1,7 @@
 package com.sanjaykumar_777.springboot_rest_webservices.users;
 
 import com.sanjaykumar_777.springboot_rest_webservices.exception.UserNotFoundException;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -31,7 +32,7 @@ public class UserResource {
     }
 
     @PostMapping("/users")
-    public ResponseEntity<User> createUser(@RequestBody User user) {
+    public ResponseEntity<User> createUser(@Valid @RequestBody User user) {
         User savedUser = userDaoService.save(user);
         /**
          * ServletUriComponentsBuilder - utility class in Spring that helps in building URI
