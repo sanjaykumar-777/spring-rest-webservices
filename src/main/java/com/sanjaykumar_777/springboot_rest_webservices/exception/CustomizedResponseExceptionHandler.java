@@ -4,8 +4,6 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
-import org.springframework.lang.Nullable;
-import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -42,5 +40,11 @@ public class CustomizedResponseExceptionHandler extends ResponseEntityExceptionH
     protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatusCode status, WebRequest request) {
         ErrorDetails errorDetails = new ErrorDetails(LocalDateTime.now(), "Total Errors "+ex.getErrorCount()+", "+ex.getFieldError().getDefaultMessage(),request.getDescription(false));
         return new ResponseEntity<>(errorDetails,HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(ContentNotAcceptableException.class)
+    public final ResponseEntity<ErrorDetails> handleContentNotAcceptableException(Exception ex, WebRequest request) throws Exception {
+        ErrorDetails errorDetails = new ErrorDetails(LocalDateTime.now(),ex.getMessage(),request.getDescription(false));
+        return new ResponseEntity<>(errorDetails, HttpStatus.NOT_ACCEPTABLE);
     }
 }

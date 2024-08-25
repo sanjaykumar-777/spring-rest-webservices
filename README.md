@@ -27,3 +27,9 @@ OpenApi and Swagger specification for the rest api's
 
 OpenApi url - http://localhost:8080/v3/api-docs
 swaggerUi - http://localhost:8080/swagger-ui/index.html
+
+Internationalization i18 for Rest Api
+MessageSource
+Locale
+Accept-language
+message.properties
