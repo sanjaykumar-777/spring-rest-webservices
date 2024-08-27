@@ -2,6 +2,7 @@ package com.sanjaykumar_777.springboot_rest_webservices.users;
 
 import com.sanjaykumar_777.springboot_rest_webservices.exception.UserNotFoundException;
 import com.sanjaykumar_777.springboot_rest_webservices.jpa.UserRepository;
+import com.sanjaykumar_777.springboot_rest_webservices.posts.Post;
 import jakarta.validation.Valid;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
@@ -62,6 +63,15 @@ public class UserResourceJpa {
     @DeleteMapping("/jpa/users/{id}")
     public void deleteUser(@PathVariable int id){
         repository.deleteById(id);
+    }
+
+    @GetMapping("/jpa/users/{id}/posts")
+    public List<Post> getAllPostOfUser(@PathVariable int id){
+        Optional<User> user = repository.findById(id);
+        if(user.isEmpty()){
+            throw new UserNotFoundException("id: "+id);
+        }
+        return user.get().getPosts();
     }
 
 }
