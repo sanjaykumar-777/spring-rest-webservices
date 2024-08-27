@@ -3,14 +3,16 @@ package com.sanjaykumar_777.springboot_rest_webservices.posts;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sanjaykumar_777.springboot_rest_webservices.users.User;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
 
 
 @Entity
 public class Post {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Size(min = 10)
     private String description;
 
     @JsonIgnore
