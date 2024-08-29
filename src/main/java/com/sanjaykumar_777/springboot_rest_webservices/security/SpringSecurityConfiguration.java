@@ -17,6 +17,7 @@ public class SpringSecurityConfiguration {
         http.httpBasic(Customizer.withDefaults());
         //3 . remove CSRF(Cross-Site Request Forgery) - POST, PUT
         //csrf is currently depricated
+        //update it later
         http.csrf().disable();
         return http.build();
 
